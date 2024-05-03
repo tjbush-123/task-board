@@ -11,24 +11,21 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Deployment 
 
-
-## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
     ```md
-    ![alt text](assets/images/screenshot.png)
+    ![alt text](/assets/images/image.png)
     ```
+
+## Usage 
+
+This project is a todo list that will help you with time management.
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Thank you Bung Sitko and Christan Salgado for working on this project with me.
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+Bung Sitko: https://github.com/BunggoyLearn/Taskmaster 
 
-If you followed tutorials, include links to those here as well.
+Christan Salgado: https://github.com/CrisSal2/Task-Board 
 
 ## License
 

@@ -2,34 +2,76 @@
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+
+const toDo = $('#to-do')
+const titleDo = $('<h3>')
+const desDo = $('<p>')
+
+
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
-    const timestamp = Date.now();
-    const randomNum = Math.floor(Math.random() * 100000);
-    const TaskId = `${timestamp}-${randomNum}`;
-    return TaskId;
+    const idstr = String.fromCharCode(Math.floor(Math.random() * 25 + 65));
+    do {
+      const ascicode = Math.floor(Math.random() * 42 + 48);
+      if (ascicode < 58 || ascicode > 64) {
+        idstr += String.fromCharCode(ascicode);
+      }
+    } while (idstr.length < 32);
+  
+    return idstr;
 }
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
-    const taskCard = document.createElement('div');
-    const taskContainer = document.getElementById('task-container');
-    taskContainer.appendChild(taskCard);
-}
+    const $newdiv1 = $( "<div class='to-do'></div>" ),
+    newdiv2 = document.createElement( "div" ),
+    existingdiv1 = document.getElementById( "todo-cards" );
+    
+    $( "body" ).append( $newdiv1, [ newdiv2, existingdiv1 ] );
+    }
+console.log(generateTaskId());
 
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
-    const taskList = document.getElementById('task-container');
+  
+    
 }
 
 // Todo: create a function to handle adding a new task
-function handleAddTask(event){
+function handleAddTask(event) {
+    event.preventDefault();
 
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const titleInput = document.querySelector('#title-of-task');
+    const dateInput = document.querySelector('#datepicker');
+    const taskInput = document.querySelector('#task-text');
+
+    tasks.push({
+
+      title: titleInput.value,
+      date: dateInput.value,
+      task: taskInput.value,
+
+    });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    createTaskCard();
 }
 
-// Todo: create a function to handle deleting a task
-function handleDeleteTask(event){
+submit.addEventListener('click', handleAddTask);
 
+// Todo: create a function to handle deleting a task
+function handleDeleteTask(event) {
+    const deleteButton = document.getElementById("button");
+    deleteButton.textContent = "Delete";
+
+    
 }
 
 // Todo: create a function to handle dropping a task into a new status lane

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,9 +10,10 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Task Board</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
 
 <body>
@@ -25,18 +26,36 @@
       <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
     </div>
     <!-- Todo: Create a modal with a form to add tasks -->
-    <form class ="task-container">
-      <label for="messageTitle">Title:</label>
-      <input name="tile" id="messageTitle" type="text" />
-
-      <label for="messageDescription">Description:</label>
-      <input name="description" id="messageDescription" type="text" />
-
-      <label for="messageDeadline">Deadline:</label>
-      <input name="deadline" id="datepicker" type="text" />
-
-      <input type="submit" value="Submit" />
-    </form>
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="formModalLabel">Add Task</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Title:</label>
+                <input type="text" class="form-control" id="title-of-task">
+              </div>
+               <div class="mb-3">
+                <label for="due-date" class="col-form-label">Due Date</label>
+                <p><input type="text" id="datepicker"></p>
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Insert text</label>
+                <textarea class="form-control" id="task-text"></textarea>
+              </div>
+            </form>    
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Add task</button>
+          </div>
+        </div>
+      </div>
+    </div> 
     <div class="row swim-lanes text-center justify-content-between">
       <div class="col-12 col-lg-4 d-flex">
         <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
@@ -80,6 +99,13 @@
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 
   <script src="./assets/js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 </body>
 
 </html>

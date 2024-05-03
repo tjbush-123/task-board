@@ -14,7 +14,3 @@ body {
 .task-card:hover {
   cursor: grab;
 }
-
-form {
-  display: none;
-}
