@@ -10,10 +10,9 @@ Provide a short description explaining the what, why, and how of your project. U
 - What did you learn?
 
 ## Deployment 
+https://tjbush-123.github.io/task-borad/
 
-    ```md
-    ![alt text](/assets/images/image.png)
-    ```
+![alt text](/assets/images/image.png)
 
 ## Usage 
 
