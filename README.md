@@ -2,12 +2,7 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+My motivation for this project was to create a webpage that is used to help people with a todo list. I built this project to create a todo list that can help people. This project solves time management and remembering what you have to do. I learned how to use server side apis with my projects and I also used how to use jqueries.
 
 ## Deployment 
 https://tjbush-123.github.io/task-borad/
